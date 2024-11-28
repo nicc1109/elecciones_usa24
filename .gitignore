@@ -1,0 +1,12 @@
+# Ignorar datos originales
+elecc_usa24/
+
+# Ignorar archivos temporales
+*.tmp
+*.log
+
+# Ignorar configuraciones locales
+.vscode/
+__pycache__/
+*.pyc
+*.pyo
