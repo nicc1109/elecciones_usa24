@@ -4,7 +4,8 @@ from src.cleaning import(
     eliminar_duplicados,
     filtrar_anio,
     validar_categoria,
-    filtrar_candidato
+    filtrar_candidato,
+    eliminar_columnas_na_completas
 )
 
 from src.visualization import(

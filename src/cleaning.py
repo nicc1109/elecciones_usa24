@@ -97,3 +97,16 @@ def filtrar_candidato(df, columna, candidato):
 
 
 
+
+def eliminar_columnas_na_completas(df):
+    """
+    Elimina las columnas de un DataFrame si todos sus valores son NaN.
+
+    Parámetros:
+        df (pd.DataFrame): DataFrame a procesar.
+
+    Retorna:
+        pd.DataFrame: DataFrame sin las columnas que tienen todos los valores como NaN.
+    """
+    return df.dropna(axis=1, how='all')
+
