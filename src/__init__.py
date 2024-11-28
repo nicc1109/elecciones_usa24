@@ -1,4 +1,4 @@
-from .cleaning import(
+from src.cleaning import(
     nombres_columnas,
     cargar_csv,
     eliminar_duplicados,
@@ -7,13 +7,13 @@ from .cleaning import(
     filtrar_candidato
 )
 
-from .visualization import(
+from src.visualization import(
     configurar_estilo,
     plot_bar,
     plot_line
 )
 
-from .analysis import(
+from src.analysis import(
     graficar_tendencia_candidato,
     graficar_distribucion_encuestadoras,
     graficar_comparacion_estado,
@@ -21,8 +21,8 @@ from .analysis import(
     graficar_tendencia_encuestadoras
 )
 
-from .file_management import(
+from src.file_management import(
     guardar_csv
 )
 
-from .config import (configurar_entorno)
+from src.config import (configurar_entorno)
