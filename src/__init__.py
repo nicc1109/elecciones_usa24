@@ -11,7 +11,11 @@ from src.cleaning import(
 from src.visualization import(
     configurar_estilo,
     plot_bar,
-    plot_line
+    plot_line,
+    plot_multi_lines,
+    plot_multi_lines_pivot,
+    plot_stacked_bar,
+    plot_trend_direct
 )
 
 from src.analysis import(
@@ -23,7 +27,9 @@ from src.analysis import(
 )
 
 from src.file_management import(
-    guardar_csv
+    guardar_csv,
+    guardar_graf_exploratorio
 )
+
 
 from src.config import (configurar_entorno)
