@@ -266,3 +266,70 @@ def plot_trend_direct(df, x, y_columns, title="Tendencia Temporal", xlabel="", y
     plt.gcf().autofmt_xdate()  # Rotar etiquetas del eje X
     plt.show()
 
+def plot_histogram(df, column, bins=10, title="Distribución de Transparency Score", xlabel="Transparency Score", ylabel="Frecuencia"):
+    """
+    Crea un histograma para analizar la distribución de una columna.
+    
+    Args:
+        df (pd.DataFrame): DataFrame con los datos.
+        column (str): Nombre de la columna a graficar.
+        bins (int): Número de bins para el histograma.
+        title (str): Título del gráfico.
+        xlabel (str): Etiqueta para el eje X.
+        ylabel (str): Etiqueta para el eje Y.
+    """
+    plt.figure(figsize=(10, 6))
+    plt.hist(df[column].dropna(), bins=bins, color="skyblue", edgecolor="black")
+    plt.title(title)
+    plt.xlabel(xlabel)
+    plt.ylabel(ylabel)
+    plt.grid(alpha=0.5, linestyle='--')
+    plt.show()
+
+def plot_bar_frecuencia(df, column, title="Distribución de Frecuencia", xlabel="", ylabel="Frecuencia", color="steelblue"):
+    """
+    Crea un gráfico de barras para analizar la frecuencia de valores en una columna específica.
+    
+    Args:
+        df (pd.DataFrame): DataFrame con los datos.
+        column (str): Nombre de la columna a graficar.
+        title (str): Título del gráfico.
+        xlabel (str): Etiqueta para el eje X.
+        ylabel (str): Etiqueta para el eje Y.
+        color (str): Color de las barras.
+    """
+    plt.figure(figsize=(10, 6))
+    df[column].value_counts().sort_index().plot(kind='bar', color=color, edgecolor="black")
+    plt.title(title)
+    plt.xlabel(xlabel if xlabel else column)
+    plt.ylabel(ylabel)
+    plt.xticks(rotation=45)
+    plt.grid(alpha=0.5, linestyle='--')
+    plt.show()
+    
+    
+def plot_scatter(df, x, y, title="Gráfico de Dispersión", xlabel="", ylabel="", color="teal"):
+    """
+    Crea un gráfico de dispersión para analizar la relación entre dos columnas.
+    
+    Args:
+        df (pd.DataFrame): DataFrame con los datos.
+        x (str): Columna para el eje X.
+        y (str): Columna para el eje Y.
+        title (str): Título del gráfico.
+        xlabel (str): Etiqueta para el eje X.
+        ylabel (str): Etiqueta para el eje Y.
+        color (str): Color de los puntos.
+    """
+    plt.figure(figsize=(10, 6))
+    plt.scatter(df[x], df[y], alpha=0.7, color=color, edgecolor="black")
+    plt.title(title)
+    plt.xlabel(xlabel if xlabel else x)
+    plt.ylabel(ylabel if ylabel else y)
+    plt.grid(alpha=0.5, linestyle='--')
+    plt.show()
+
+
+
+
+

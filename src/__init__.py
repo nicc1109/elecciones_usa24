@@ -15,7 +15,10 @@ from src.visualization import(
     plot_multi_lines,
     plot_multi_lines_pivot,
     plot_stacked_bar,
-    plot_trend_direct
+    plot_trend_direct,
+    plot_histogram,
+    plot_bar_frecuencia,
+    plot_scatter
 )
 
 from src.analysis import(
