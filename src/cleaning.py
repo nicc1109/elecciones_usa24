@@ -110,3 +110,18 @@ def eliminar_columnas_na_completas(df):
     """
     return df.dropna(axis=1, how='all')
 
+def fechas(df, *date_columns):
+    """
+    Formatea las columnas de fecha de un DataFrame al formato DD/MM/AAAA.
+
+    Parameters:
+    df (pd.DataFrame): El DataFrame que contiene las columnas de fecha.
+    *date_columns: Nombres de las columnas de fecha a formatear.
+
+    Returns:
+    pd.DataFrame: El DataFrame con las columnas de fecha formateadas.
+    """
+    for col in date_columns:
+        df[col] = pd.to_datetime(df[col]).dt.strftime('%d/%m/%Y')
+    return df
+

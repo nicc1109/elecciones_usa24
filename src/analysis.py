@@ -104,32 +104,7 @@ def graficar_calor_resultados_estado(df, estado_col, candidato_col, resultado_co
     plt.tight_layout()
     plt.show()
 
-def graficar_tendencia_encuestadoras(df, fecha_col, encuestadora_col, resultado_col, title="Tendencia por Encuestadora"):
-    """
-    Genera un gráfico de líneas para comparar las tendencias de múltiples encuestadoras a lo largo del tiempo.
-    
-    Args:
-        df (pd.DataFrame): DataFrame con los datos.
-        fecha_col (str): Nombre de la columna con las fechas.
-        encuestadora_col (str): Nombre de la columna con las encuestadoras.
-        resultado_col (str): Nombre de la columna con los resultados.
-        title (str, opcional): Título del gráfico.
-    """
-    if fecha_col not in df.columns or encuestadora_col not in df.columns or resultado_col not in df.columns:
-        raise ValueError("Columnas especificadas no están en el DataFrame.")
-    
-    plt.figure(figsize=(10, 6))
-    for encuestadora in df[encuestadora_col].unique():
-        data_encuestadora = df[df[encuestadora_col] == encuestadora]
-        data_encuestadora = data_encuestadora.sort_values(by=fecha_col)
-        plt.plot(data_encuestadora[fecha_col], data_encuestadora[resultado_col], marker='o', label=encuestadora)
-    
-    plt.title(title)
-    plt.xlabel(fecha_col)
-    plt.ylabel(resultado_col)
-    plt.legend(title="Encuestadora", bbox_to_anchor=(1.05, 1), loc='upper left')
-    plt.tight_layout()
-    plt.show()
+
 
 def graficar_tendencia_encuestadoras(df, fecha_col, encuestadora_col, resultado_col, title="Tendencia por Encuestadora"):
     """

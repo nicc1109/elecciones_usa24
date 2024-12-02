@@ -5,7 +5,8 @@ from src.cleaning import(
     filtrar_anio,
     validar_categoria,
     filtrar_candidato,
-    eliminar_columnas_na_completas
+    eliminar_columnas_na_completas,
+    fechas
 )
 
 from src.visualization import(
